@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5MU-GT-HDl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="umn-gP-fXd">
+            <objects>
+                <viewController id="5MU-GT-HDl" customClass="ViewController" customModule="CombineFirstLook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wi0-hi-jiT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="3eJ-qb-y59">
+                                <rect key="frame" x="20" y="323.5" width="374" height="249"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkh-Gf-Xqx">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="username"/>
+                                        <connections>
+                                            <action selector="textChanged:" destination="5MU-GT-HDl" eventType="editingChanged" id="7tz-WA-PMg"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nfi-GH-wWq">
+                                        <rect key="frame" x="0.0" y="74" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <connections>
+                                            <action selector="textChanged:" destination="5MU-GT-HDl" eventType="editingChanged" id="Yli-4D-LAa"/>
+                                        </connections>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="VGb-3q-OsX">
+                                        <rect key="frame" x="0.0" y="148" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm not a robot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkv-6H-PLe">
+                                                <rect key="frame" x="0.0" y="0.0" width="299" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b8d-pP-gzE">
+                                                <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="notARobotTapped:" destination="5MU-GT-HDl" eventType="valueChanged" id="s6n-Lh-zpN"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pV-2u-fen">
+                                        <rect key="frame" x="0.0" y="219" width="374" height="30"/>
+                                        <state key="normal" title="Login"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3eJ-qb-y59" firstAttribute="centerY" secondItem="wi0-hi-jiT" secondAttribute="centerY" id="Gva-L7-Tc8"/>
+                            <constraint firstItem="3eJ-qb-y59" firstAttribute="leading" secondItem="6bs-2t-idT" secondAttribute="leading" constant="20" id="TGu-GF-alW"/>
+                            <constraint firstItem="6bs-2t-idT" firstAttribute="trailing" secondItem="3eJ-qb-y59" secondAttribute="trailing" constant="20" id="qEJ-ed-Wdq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6bs-2t-idT"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="6pV-2u-fen" id="T2i-2G-u0b"/>
+                        <outlet property="notARobotSwitch" destination="b8d-pP-gzE" id="7DP-Gt-o6P"/>
+                        <outlet property="passwordTextField" destination="Nfi-GH-wWq" id="i9x-6d-K7g"/>
+                        <outlet property="usernameTextField" destination="jkh-Gf-Xqx" id="OHh-yl-V1z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="753-lq-fgX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="30"/>
+        </scene>
+    </scenes>
+</document>
